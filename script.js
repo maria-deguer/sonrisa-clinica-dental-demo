@@ -83,6 +83,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const chatClose = document.getElementById('chatClose');
   const chatBody = document.getElementById('chatBody');
   const chatTyping = document.getElementById('chatTyping');
+  const chatCta = document.getElementById('chatCta');
+  const chatCtaBtn = document.getElementById('chatCtaBtn');
 
   const script = [
     { from: 'user', text: 'Hola, quería consultar por un tratamiento.' },
@@ -114,6 +116,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
       delay += 1100;
     });
+
+    setTimeout(() => {
+      chatCta.classList.add('visible');
+    }, delay);
   }
 
   function openChat() {
@@ -128,5 +134,6 @@ document.addEventListener('DOMContentLoaded', () => {
     chatWindow.classList.contains('open') ? closeChat() : openChat();
   });
   chatClose.addEventListener('click', closeChat);
+  chatCtaBtn.addEventListener('click', closeChat);
 
 });

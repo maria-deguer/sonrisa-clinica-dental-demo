@@ -222,7 +222,8 @@
     <div class="section-inner contact-grid">
       <div class="contact-info reveal">
         <h2>¿Querés solicitar un turno?</h2>
-        <p>Escribinos y coordinamos el mejor horario para tu primera consulta.</p>
+        <p>Estamos para ayudarte a encontrar el horario que mejor se adapte a vos.</p>
+        <a href="#contactForm" class="btn btn-primary contact-cta">Solicitar turno</a>
 
         <div class="info-item">
           <span class="info-icon">
@@ -282,6 +283,17 @@
     <a href="#contacto" class="btn btn-cta">Solicitar turno</a>
   </section>
 
+  <!-- ============ CTA PREMIUM (discreto) ============ -->
+  <section class="premium-teaser reveal">
+    <div class="premium-teaser-inner">
+      <div>
+        <h3>¿Querés llevar la experiencia digital un paso más allá?</h3>
+        <p>También contamos con una propuesta Premium que integra WhatsApp con IA y agenda automatizada.</p>
+      </div>
+      <a href="../aurea-dental/" class="btn btn-ghost premium-teaser-btn">Conocer opción Premium</a>
+    </div>
+  </section>
+
 </main>
 
 <!-- ============ FOOTER ============ -->
@@ -332,8 +344,12 @@
     </div>
     <div class="chat-body" id="chatBody"></div>
     <div class="chat-typing" id="chatTyping"><span></span><span></span><span></span></div>
+    <div class="chat-cta" id="chatCta">
+      <a href="#contacto" class="btn btn-primary btn-block btn-sm" id="chatCtaBtn">Solicitar turno</a>
+    </div>
   </div>
   <button class="chat-toggle" id="chatToggle" aria-label="Abrir chat">
+    <span class="chat-tooltip">¿Necesitás ayuda?</span>
     <svg viewBox="0 0 32 32" width="26" height="26"><path d="M16.02 3C9.4 3 4 8.36 4 15.02c0 2.35.64 4.55 1.76 6.44L4 29l7.72-1.7a11.9 11.9 0 0 0 4.3.79h.01c6.62 0 12.02-5.36 12.02-12.02C28.05 8.4 22.65 3 16.02 3z" fill="currentColor"/></svg>
   </button>
 </div>
