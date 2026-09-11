@@ -325,7 +325,10 @@ img, svg { display: block; max-width: 100%; }
   background: var(--gray-light);
   border-radius: 4px;
   padding: 40px;
+  box-shadow: var(--shadow);
 }
+.automation-grid .agenda-widget { max-width: none; margin: 0; }
+.agenda-title { font-family: var(--font-head); font-size: 1.05rem; font-weight: 600; color: var(--navy); margin-bottom: 24px; }
 .agenda-days { display: flex; gap: 12px; margin-bottom: 28px; flex-wrap: wrap; }
 .agenda-day {
   font-family: var(--font-head); font-size: 0.86rem; font-weight: 500;
@@ -349,6 +352,68 @@ img, svg { display: block; max-width: 100%; }
 }
 .agenda-summary span { font-size: 0.94rem; color: var(--navy); font-weight: 500; }
 .agenda-summary.confirmed span { color: #1E8E5A; }
+
+/* ---------- Automation section ---------- */
+.automation-section .section-heading { margin-bottom: 44px; }
+.flow-track {
+  display: flex; align-items: center; justify-content: center; flex-wrap: wrap;
+  gap: 10px; margin-bottom: 56px;
+}
+.flow-step {
+  font-family: var(--font-head); font-size: 0.74rem; font-weight: 500;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  color: rgba(255,255,255,0.75);
+  border: 1px solid rgba(127,216,227,0.3);
+  border-radius: 999px; padding: 8px 16px;
+  white-space: nowrap;
+}
+.flow-step--confirm { background: var(--cyan-deep); color: var(--navy-deep); border-color: var(--cyan-deep); font-weight: 600; }
+.flow-arrow { color: rgba(127,216,227,0.5); font-size: 0.9rem; }
+
+.automation-grid {
+  display: grid; grid-template-columns: auto auto 1fr; gap: 32px; align-items: center; justify-content: center;
+}
+.automation-connector { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.connector-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--cyan-deep); flex-shrink: 0; }
+.connector-line { width: 1px; flex: 1; min-height: 120px; background: linear-gradient(to bottom, var(--cyan-deep), rgba(127,216,227,0.15)); }
+
+.replay-btn { display: block; margin: 40px auto 0; }
+
+/* ---------- WhatsApp float button ---------- */
+.wa-float {
+  position: fixed; bottom: 26px; right: 26px; z-index: 800;
+  display: flex; align-items: center;
+}
+.wa-float-btn {
+  width: 56px; height: 56px; border-radius: 50%;
+  background: var(--navy); color: var(--white);
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 16px 32px -12px rgba(15,42,74,0.55);
+  transition: transform 0.25s ease;
+  animation: waFloatPulse 2.8s ease-in-out infinite;
+}
+.wa-float-btn:hover { transform: scale(1.06); }
+@keyframes waFloatPulse {
+  0%, 100% { box-shadow: 0 16px 32px -12px rgba(15,42,74,0.55), 0 0 0 0 rgba(127,216,227,0.35); }
+  50% { box-shadow: 0 16px 32px -12px rgba(15,42,74,0.55), 0 0 0 9px rgba(127,216,227,0); }
+}
+.wa-float-tooltip {
+  position: absolute; right: calc(100% + 12px); top: 50%; transform: translateY(-50%) translateX(6px);
+  background: var(--navy); color: var(--white); font-family: var(--font-head); font-size: 0.78rem; font-weight: 500;
+  padding: 8px 14px; border-radius: 6px; white-space: nowrap;
+  opacity: 0; visibility: hidden; transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+  pointer-events: none;
+}
+.wa-float:hover .wa-float-tooltip { opacity: 1; visibility: visible; transform: translateY(-50%) translateX(0); }
+
+/* ---------- Professional teaser ---------- */
+.professional-teaser { background: var(--gray-light); padding: 34px 32px; border-top: 1px solid var(--gray-line); }
+.professional-teaser-inner {
+  max-width: 1200px; margin: 0 auto; padding: 0 8px;
+  display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;
+}
+.professional-teaser-inner span { font-size: 0.92rem; color: var(--navy); font-weight: 500; }
+.professional-teaser-btn { flex-shrink: 0; padding: 11px 24px; font-size: 0.82rem; }
 
 /* ---------- Stages (experiencia del paciente) ---------- */
 .stages-grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 60px; align-items: start; }
@@ -440,6 +505,9 @@ img, svg { display: block; max-width: 100%; }
   .specialists-grid { grid-template-columns: 1fr; max-width: 320px; margin: 0 auto; gap: 44px; }
   .tech-grid { grid-template-columns: 1fr; }
   .phone-frame { margin-top: 20px; }
+  .automation-grid { grid-template-columns: 1fr; justify-items: center; }
+  .automation-connector { flex-direction: row; width: 100%; max-width: 200px; margin: 8px 0; }
+  .connector-line { width: auto; flex: 1; min-height: 0; height: 1px; background: linear-gradient(to right, var(--cyan-deep), rgba(127,216,227,0.15)); }
   .stages-grid { grid-template-columns: 1fr; gap: 30px; }
   .contact-grid { grid-template-columns: 1fr; }
   .footer-inner { grid-template-columns: 1fr 1fr; }
@@ -459,6 +527,10 @@ img, svg { display: block; max-width: 100%; }
   .footer-inner { grid-template-columns: 1fr; gap: 26px; }
   .glass-badge { display: none; }
   .agenda-widget { padding: 28px 22px; }
+  .flow-track { gap: 6px; }
+  .flow-step { font-size: 0.66rem; padding: 6px 11px; }
+  .wa-float { bottom: 18px; right: 18px; }
+  .professional-teaser-inner { flex-direction: column; text-align: center; }
 }
 
 @media (max-width: 480px) {

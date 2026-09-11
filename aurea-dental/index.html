@@ -268,85 +268,74 @@
     </div>
   </section>
 
-  <!-- ============ WHATSAPP IA ============ -->
-  <section class="section section-dark" id="whatsapp-ia">
-    <div class="section-inner tech-grid">
-      <div class="tech-copy reveal">
-        <p class="eyebrow eyebrow--light">Tecnología</p>
-        <h2>Tu clínica también puede estar disponible cuando vos no lo estás.</h2>
-        <p class="lead lead--light">Una experiencia digital que acompaña al paciente desde la consulta hasta la reserva, las 24 horas.</p>
-        <button class="btn btn-outline-light" id="replayChat">Reproducir conversación</button>
+  <!-- ============ AUTOMATIZACIÓN: WHATSAPP + AGENDA ============ -->
+  <section class="section section-dark automation-section" id="whatsapp-ia">
+    <div class="section-inner">
+      <div class="section-heading section-heading--light reveal">
+        <p class="eyebrow eyebrow--light">Automatización</p>
+        <h2>De una consulta a un turno. Automáticamente.</h2>
+        <p>Lia responde consultas, brinda información, ofrece disponibilidad y ayuda a agendar turnos por WhatsApp. Tus pacientes pueden consultar en cualquier momento.</p>
       </div>
 
-      <div class="phone-frame reveal">
-        <div class="phone-notch"></div>
-        <div class="wa-header">
-          <span class="wa-avatar">L</span>
-          <div class="wa-header-text">
-            <strong>Lia · Áurea Dental</strong>
-            <span>en línea</span>
+      <div class="flow-track reveal">
+        <span class="flow-step">Consulta</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-step">Información</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-step">Disponibilidad</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-step">Elección</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-step flow-step--confirm">Turno confirmado</span>
+      </div>
+
+      <div class="automation-grid">
+        <div class="phone-frame reveal">
+          <div class="phone-notch"></div>
+          <div class="wa-header">
+            <span class="wa-avatar">L</span>
+            <div class="wa-header-text">
+              <strong>Lia · Áurea Dental</strong>
+              <span>en línea</span>
+            </div>
+          </div>
+          <div class="wa-body" id="waBody"></div>
+          <div class="wa-typing" id="waTyping"><span></span><span></span><span></span></div>
+        </div>
+
+        <div class="automation-connector reveal" aria-hidden="true">
+          <span class="connector-dot"></span>
+          <span class="connector-line"></span>
+          <span class="connector-dot"></span>
+        </div>
+
+        <div class="agenda-widget reveal" id="agenda">
+          <p class="eyebrow">Agenda</p>
+          <p class="agenda-title">Reservá tu turno de forma simple.</p>
+          <div class="agenda-days" id="agendaDays">
+            <button class="agenda-day active" data-day="Lunes">Lunes</button>
+            <button class="agenda-day" data-day="Martes">Martes</button>
+            <button class="agenda-day" data-day="Miércoles">Miércoles</button>
+          </div>
+          <div class="agenda-slots" id="agendaSlots"></div>
+          <div class="agenda-summary" id="agendaSummary">
+            <span id="agendaSummaryText">Elegí un día y un horario disponible.</span>
+            <button class="btn btn-primary" id="agendaConfirm" disabled>Confirmar turno</button>
           </div>
         </div>
-        <div class="wa-body" id="waBody"></div>
-        <div class="wa-typing" id="waTyping"><span></span><span></span><span></span></div>
       </div>
+
+      <button class="btn btn-outline-light replay-btn" id="replayChat">Reproducir conversación</button>
     </div>
   </section>
 
-  <!-- ============ AGENDA ============ -->
-  <section class="section" id="agenda">
-    <div class="section-inner">
-      <div class="section-heading reveal">
-        <p class="eyebrow">Agenda</p>
-        <h2>Reservá tu turno de forma simple.</h2>
-      </div>
-
-      <div class="agenda-widget reveal">
-        <div class="agenda-days" id="agendaDays">
-          <button class="agenda-day active" data-day="Lunes">Lunes</button>
-          <button class="agenda-day" data-day="Martes">Martes</button>
-          <button class="agenda-day" data-day="Miércoles">Miércoles</button>
-        </div>
-
-        <div class="agenda-slots" id="agendaSlots">
-          <!-- filled by JS -->
-        </div>
-
-        <div class="agenda-summary" id="agendaSummary">
-          <span id="agendaSummaryText">Elegí un día y un horario disponible.</span>
-          <button class="btn btn-primary" id="agendaConfirm" disabled>Confirmar turno</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ EXPERIENCIA DEL PACIENTE ============ -->
-  <section class="section section-alt" id="etapas">
-    <div class="section-inner stages-grid">
-      <div class="section-heading stages-heading reveal">
-        <p class="eyebrow">Experiencia del paciente</p>
-        <h2>Todo empieza antes de entrar a la clínica.</h2>
-      </div>
-      <div class="stages-list">
-        <div class="stage-item reveal">
-          <span class="stage-num">01</span>
-          <div><h3>Consultá</h3><p>Escribinos cuando lo necesites, por el canal que prefieras.</p></div>
-        </div>
-        <div class="stage-item reveal">
-          <span class="stage-num">02</span>
-          <div><h3>Elegí</h3><p>Te acompañamos a definir el tratamiento adecuado.</p></div>
-        </div>
-        <div class="stage-item reveal">
-          <span class="stage-num">03</span>
-          <div><h3>Reservá</h3><p>Seleccioná el día y horario que mejor te quede.</p></div>
-        </div>
-        <div class="stage-item reveal">
-          <span class="stage-num">04</span>
-          <div><h3>Recordá</h3><p>Te avisamos antes para que no se te pase.</p></div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- ============ WHATSAPP FLOTANTE ============ -->
+  <div class="wa-float">
+    <span class="wa-float-tooltip">Hablá con Lia</span>
+    <a href="#whatsapp-ia" class="wa-float-btn" id="waFloatBtn" aria-label="Abrir demo de Lia por WhatsApp">
+      <svg viewBox="0 0 32 32" width="24" height="24"><path d="M16.02 3C9.4 3 4 8.36 4 15.02c0 2.35.64 4.55 1.76 6.44L4 29l7.72-1.7a11.9 11.9 0 0 0 4.3.79h.01c6.62 0 12.02-5.36 12.02-12.02C28.05 8.4 22.65 3 16.02 3zm0 21.8c-1.5 0-2.98-.4-4.27-1.16l-.3-.18-4.58 1 1.02-4.46-.2-.32a9.75 9.75 0 0 1-1.5-5.2c0-5.42 4.42-9.83 9.85-9.83 2.63 0 5.1 1.03 6.96 2.9a9.72 9.72 0 0 1 2.88 6.94c0 5.42-4.42 9.83-9.86 9.83z" fill="currentColor"/></svg>
+    </a>
+  </div>
 
   <!-- ============ CTA PREMIUM ============ -->
   <section class="cta-final reveal">
@@ -354,7 +343,7 @@
     <p>Reservá tu turno o escribinos por WhatsApp.</p>
     <div class="cta-actions">
       <a href="#agenda" class="btn btn-cta">Reservar turno</a>
-      <a href="https://wa.me/5491100000000" target="_blank" rel="noopener" class="btn btn-outline-light">Hablar por WhatsApp</a>
+      <a href="#whatsapp-ia" class="btn btn-outline-light" id="ctaWhatsapp">Hablar por WhatsApp</a>
     </div>
   </section>
 
@@ -407,6 +396,14 @@
   </section>
 
 </main>
+
+<!-- ============ CTA PROFESIONAL (discreto) ============ -->
+<section class="professional-teaser reveal">
+  <div class="professional-teaser-inner">
+    <span>¿Buscás una solución más simple?</span>
+    <a href="../" class="btn btn-ghost professional-teaser-btn">Ver Plan Profesional</a>
+  </div>
+</section>
 
 <!-- ============ FOOTER ============ -->
 <footer class="site-footer">
